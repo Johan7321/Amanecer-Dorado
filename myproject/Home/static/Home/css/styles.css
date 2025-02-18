@@ -1,3 +1,8 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
 
 .navbar {
     background-color: #000000;
@@ -272,9 +277,15 @@
     left: 73%;
     width:25%;
 }
-
 /* footer */
-.footer{
-    position: absolute;
-    top: 460%;
+footer {
+    position: relative;
+    width: 100%;
+    background-color: #b4b9c2;
+    padding: 20px 0;
+    text-align: center;
 }
+
+
+
+

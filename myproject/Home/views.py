@@ -12,3 +12,6 @@ def ejemplo(request):
 
 def identity_view(request):
     return render(request, 'Home/Identidad.html')
+
+def services_view(request):
+    return render(request, 'Home/servicios_generales.html')
