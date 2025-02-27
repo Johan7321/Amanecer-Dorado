@@ -15,3 +15,6 @@ def identity_view(request):
 
 def services_view(request):
     return render(request, 'Home/servicios_generales.html')
+
+def otros_view(request):
+    return render(request, 'Home/Otroservicios.html')
