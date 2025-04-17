@@ -25,8 +25,12 @@ STATICFILES_DIRS = [
 # Configuración de la base de datos
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',  # Esta línea debería funcionar ahora
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'amanecer_dorado',
+        'USER': 'postgres',
+        'PASSWORD': '862656Jm*',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

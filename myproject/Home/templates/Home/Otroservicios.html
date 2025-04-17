@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="{% static 'home/css/styles.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" href="{% static 'home/favicon.ico' %}" type="image/x-icon">
     <style>
         body {
@@ -42,13 +43,16 @@
                             Servicios
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item text-white" href="#">Servicios Generales</a></li>
-                            <li><a class="dropdown-item text-white" href="#">Otros Servicios</a></li>
+                            <li><a class="dropdown-item text-white" href="{% url 'services' %}">Servicios Generales</a></li>
+                            <li><a class="dropdown-item text-white" href="{% url 'otros' %}">Otros Servicios</a></li>
                         </ul>
                     </div>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Contacto</a>
+                        <a class="nav-link text-white" href="{% url 'Contacto' %}">Contacto</a>
                     </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="{% url 'Login' %}">Ingreso</a>
+                  </li>
                 </ul>
             </div>
         </div>
@@ -73,11 +77,91 @@
         });
     </script>  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>   
+    <br>
+    <h4>Servicios de Enfermeria</h4>
+      <div class="card text-dark bg-light mb-3" style="max-width: 18rem; position: absolute; top: 22%; width:25%; left: 5%; height: auto;">
+        <div class="card-body">
+          <h5 class="card-title">Apoyo Emocional</h5>
+          <p class="card-text">Nuestros servicios de psicología están diseñados para brindar apoyo emocional a nuestros residentes, ayudándoles a enfrentar los desafíos de la vida con mayor resiliencia y bienestar.</p>
+        </div>
+      </div>
+      <div class="card text-white bg-primary mb-3" style="max-width: 18rem; position: absolute; top: 22%; width:25%; left: 29%; height: auto;">
+        <div class="card-body">
+          <h5 class="card-title">Evaluaciones Psicológicas</h5>
+          <p class="card-text">Realizamos evaluaciones psicológicas para conocer el estado emocional y mental de nuestros residentes, adaptando nuestras terapias y actividades según sus necesidades individuales.</p>
+        </div>
+      </div>
 
- 
-  
+      <div class="card text-dark bg-warning mb-3" style="max-width: 18rem; position: absolute; top: 65%; width:25%; left: 15%; height: auto;">
+        <div class="card-body">
+          <h5 class="card-title">Terapias Individuales y Grupales</h5>
+          <p class="card-text">Ofrecemos terapias tanto individuales como grupales, fomentando la socialización y el apoyo mutuo entre los residentes, y promoviendo un ambiente de convivencia saludable.</p>
+        </div>
+      </div>
+      <div style="position: relative; height: 400px;"> <!-- Ajusta la altura según necesites -->
+
+        <h4 style="position: absolute; top: 20%; left: 65%; width: 25%; max-width: 18rem;">
+          Servicios de psicología
+        </h4>
+      
+        <div class="card border-primary mb-3" style="position: absolute; top: 28%; left: 65%; width: 25%; max-width: 18rem; height: auto;">
+          <div class="card-body text-primary">
+            <h5 class="card-title">Apoyo Emocional</h5>
+            <p class="card-text">
+              Nuestros servicios de psicología están diseñados para brindar apoyo emocional a nuestros residentes,
+              ayudándoles a enfrentar los desafíos de la vida con mayor resiliencia y bienestar.
+            </p>
+          </div>
+        </div>
+      
+      </div>
+
+      <div class="card border-secondary mb-3" style="max-width: 18rem; position: absolute; top: 80%; width:25%; left: 77%; height: auto;">
+        <div class="card-body text-secondary">
+          <h5 class="card-title">Evaluaciones Psicológicas</h5>
+          <p class="card-text">Realizamos evaluaciones psicológicas para conocer el estado emocional y mental de nuestros residentes, adaptando nuestras terapias y actividades según sus necesidades individuales.</p>
+        </div>
+      </div>
+      
+      <div class="card border-success mb-3" style="max-width: 18rem; position: absolute; top: 80%; width:25%; left: 53%; height: auto;">
+        <div class="card-body text-success">
+          <h5 class="card-title">Terapias Individuales y Grupales</h5>
+          <p class="card-text">Ofrecemos terapias tanto individuales como grupales, fomentando la socialización y el apoyo mutuo entre los residentes, y promoviendo un ambiente de convivencia saludable.</p>
+        </div>
+      </div>
+      <a href="https://wa.me/573227478740" 
+   class="whatsapp-float" 
+   target="_blank" 
+   title="Contáctanos por WhatsApp">
+   <i class="fab fa-whatsapp"></i>
+  </a>
+
 </body>
-<footer style="top: 90%;  width:100%; position: absolute; background-color:  #b4b9c2 ; padding: 20px 0; text-align: center; font-family: Arial, sans-serif; font-size: 14px; color: #333;">
+<style>
+  .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      font-size: 28px;
+      text-align: center;
+      line-height: 60px;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease;
+  }
+  
+  .whatsapp-float:hover {
+      background-color: #1ebe5b;
+      text-decoration: none;
+  }
+  </style> 
+</body>
+<footer style="top: 130%;  width:100%; position: absolute; background-color:  #b4b9c2 ; padding: 20px 0; text-align: center; font-family: Arial, sans-serif; font-size: 14px; color: #333;">
   <div style="display: flex; justify-content: space-around; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
       <div>
           <h4 style="font-weight: bold; margin-bottom: 10px;">Contáctanos</h4>

@@ -23,6 +23,8 @@ urlpatterns = [
     path('Identity/', views.identity_view, name='identity'),
     path('Services/', views.services_view, name='services'), 
     path('Otros/', views.otros_view, name='otros'), 
+    path('Contacto/', views.Contacto_view, name='Contacto'), 
+    path('Login/', views.Login_view, name='Login'), 
 ]
 
 

@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="{% static 'home/css/styles.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" href="{% static 'home/favicon.ico' %}" type="image/x-icon">
     <style>
         body {
@@ -47,7 +48,10 @@
                         </ul>
                     </div>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Contacto</a>
+                        <a class="nav-link text-white" href="{% url 'Contacto' %}">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'Login' %}">Ingreso</a>
                     </li>
                 </ul>
             </div>
@@ -177,7 +181,37 @@
         <h4 id="item-5-3">Cómo Elegir el Hogar Geriátrico Adecuado</h4>
         <p>Elegir el hogar geriátrico adecuado implica considerar varios factores importantes, como la ubicación, los servicios ofrecidos, el personal, y las opiniones de otros residentes y sus familias.</p>
     </div>
-  
+    <a href="https://wa.me/573227478740" 
+    class="whatsapp-float" 
+    target="_blank" 
+    title="Contáctanos por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+   </a>
+ 
+ </body>
+ <style>
+   .whatsapp-float {
+       position: fixed;
+       bottom: 20px;
+       right: 20px;
+       width: 60px;
+       height: 60px;
+       background-color: #25D366;
+       color: white;
+       border-radius: 50%;
+       font-size: 28px;
+       text-align: center;
+       line-height: 60px;
+       z-index: 1000;
+       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+       transition: background-color 0.3s ease;
+   }
+   
+   .whatsapp-float:hover {
+       background-color: #1ebe5b;
+       text-decoration: none;
+   }
+   </style> 
 </body>
 <footer style="top: 210%;  width:100%; position: absolute; background-color:  #b4b9c2 ; padding: 20px 0; text-align: center; font-family: Arial, sans-serif; font-size: 14px; color: #333;">
   <div style="display: flex; justify-content: space-around; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
