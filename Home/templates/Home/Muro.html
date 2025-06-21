@@ -1,0 +1,319 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G&V Amanecer Dorado</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="{% static 'home/css/styles.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="{% static 'home/favicon.ico' %}" type="image/x-icon">
+    <style>
+        body {
+            padding-top: 70px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" >
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">G&V Amanecer Dorado</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active text-warning" aria-current="page" href="{% url 'Muro' %}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'identity' %}">¿Quienes Somos?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Hogares Geriatricos</a>
+                    </li>
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            Servicios
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item text-white" href="{% url 'services' %}">Servicios Generales</a></li>
+                            <li><a class="dropdown-item text-white" href="{% url 'otros' %}">Otros Servicios</a></li>
+                        </ul>
+                    </div>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'Contacto' %}">Contacto</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                      <a class="nav-link text-white" href="{% url 'Login' %}">Ingreso</a>
+                  </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- JavaScript para cambiar el color del navbar en scroll -->
+    <script type="text/javascript">
+        window.addEventListener("scroll", function() {
+            var navbar = document.querySelector("nav");
+            var dropdownMenu = document.querySelector(".dropdown-menu");
+            var dropdownButton = document.querySelector(".dropdown-toggle");
+    
+            if (window.scrollY > 0) {
+                navbar.classList.add("abajo");
+                dropdownMenu.classList.add("abajo");
+                dropdownButton.classList.add("abajo");
+            } else {
+                navbar.classList.remove("abajo");
+                dropdownMenu.classList.remove("abajo");
+                dropdownButton.classList.remove("abajo");
+            }
+        });
+    </script>  
+
+      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'home/images/im1.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'home/images/im2.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'home/images/im3.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+    <div class="card" style="width: 18rem; background-color: #333;">
+        <img class="card-img-top" src="{% static 'home/images/Logo.jpg' %}" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text"><p class="h4" style="color: darkgoldenrod; background-color: azure;">Bienvenidos a G&V Amanecer Dorado</p></p>
+        </div>
+    </div>    
+
+    <!-- Mision y vision -->
+
+    <div class="card-titulo" style="max-width: 18rem;">
+        <div class="card-body text-primary">
+          <h5 class="card-title">¿Sobre nosotros?</h5>
+        </div>
+    </div>
+
+
+    <div class="card-mv" >
+      <div class="card-body">
+        <h5 class="card-title">Vision</h5>
+        <p class="card-text">Brindar un servicio optimizado "especificar servicio" que supere las expectativas nuestros seres queridos, donde el enfoque continuo sea el bienestar y la comodidad que merecen, desde la variedad de opciones de contacto hasta el seguimiento y satisfaccion que nos impulsar a mejorar cada dia en la busqueda de tu hogar social.</p>
+      </div>
+    </div>
+
+    <div class="card-m" >
+      <div class="card-body">
+        <h5 class="card-title">Mision</h5>
+        <p class="card-text">Con nuestro arduo esfuerzo en el mejoramiento y constancia del servicio que brindamos para nuestros seres queridos; anhelamos establecer un vinculo unico y diferenciable a traves de la satisfaccion que realmente resplandece con felicidad su espiritu y ser. "proyeccion de mediano plazo de como me veo, referente a la actividad economica"</p>
+      </div>
+    </div>
+
+    <!-- objetivos -->
+    <div class="card-objetivos">
+        <div class="card-header">
+          Objetivos
+        </div>
+        <div class="card-body">
+          <h7 class="card-title">Obsequiar un valor emocional a las familias que buscan un hogar ideal, que promueva satisfaccion en su proceso y permanencia.</h7>
+        </div>
+            <div class="card-footer text-muted">
+                Objetivos Especificos
+            </div>
+    </div>
+
+    <!-- objetivos espeficos -->
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col1">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Objetivo 1</h5>
+              <p class="card-text">1. Segmentar nuestros servicios para las familias
+                que buscan un hogar geriatrico y las compañias
+                 que brindan este hogar con una buena calidad.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Objetivo 2</h5>
+              <p class="card-text">2. Mantener seguimiento a la familia que contrata su
+                servicio con un hogar geriatrico buscando su 
+                permanencia y satisfaccion.                       
+                </p>
+            </div>
+          </div>
+        </div>
+        <div class="col3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Objetivo 3</h5>
+              <p class="card-text">3.Compartir expectativas y experiencias a los hogares
+                geriatricos, para que de manera conjunta se busque
+                mejorar e innovar el servicio.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- servicios -->
+      <div class="card-titulo-servicios" style="max-width: 18rem;">
+        <div class="card-body text-primary">
+          <h5 class="card-title">Nuestros servicios</h5>
+        </div>
+      </div>
+      <div class="card-servi" style="width: 18rem;">
+        <img src="{% static 'home/images/Ayuda.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5>Busqueda de hogares geriatricos</h5>
+          <p class="card-text">
+            Nuestro servicio principal es ayudarte a encontrar el hogar
+            perfecto para tu ser querido. Evaluamos tus necesidades y
+            te proporcionamos opciones que se adapten atus requerimientos.</p>
+        </div>
+      </div>
+      <div class="card-servi1" style="width: 18rem;">
+        <img src="{% static 'home/images/Asesor.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5>Asesoramiento para elegir</h5>
+          <p class="card-text">
+            Ofrecemos asesoramiento personalizado para asegurarnos de que encuentres
+            la mejor opcion disponible. Nuestro equipo esta aqui para respoder todas tus preguntas y ayudarte en cada caso 
+            del proceso.</p>
+        </div>
+      </div>
+      <div class="card-servi2" style="width: 18rem;">
+        <img src="{% static 'home/images/Visita.jpeg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5>Visitas Guiadas</h5>
+          <p class="card-text">
+            Organizamos visitas guiadas a los hogares geriatricos para que 
+            puedas conocer las instalaciones, el personal, y el
+            ambientes antes de tomar una desicion.</p>
+        </div>
+      </div>
+      <div class="card-servi3" style="width: 18rem;">
+        <img src="{% static 'home/images/post.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5>Servicio Post-Seleccion</h5>
+          <p class="card-text">
+            Una vez que hayas seleccionado un hogar geriatrico,seguimos brindando
+            apoyo para asegurar que la transicion sea lo mas facil posible y que tu ser querido
+            se adapte bien a su nuevo entorno.</p>
+        </div>
+      </div>
+
+      <!-- listas de consejos -->
+      <div class="card-titulo-Listas" style="max-width: 18rem;">
+        <div class="card-body text-primary">
+          <h5 class="card-title">Como Elegir un Hogar Geriatrico Adecuado</h5>
+        </div>
+      </div>
+
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-primary">Evalua las necesidades del Adulto Mayor</li>
+        <li class="list-group-item">Estado de salud.</li>
+        <li class="list-group-item">Necesidades de cuidado personal.</li>
+        <li class="list-group-item">Preferencias personales.</li>
+        <li class="list-group-item list-group-item-secondary">Investigacion Inicial</li>
+        <li class="list-group-item">Sitios web especializados.</li>
+        <li class="list-group-item">Agencias locales.</li>
+        <li class="list-group-item list-group-item-secondary">Visita y evaluacion: Ten en cuenta lo siguiente</li>
+        <li class="list-group-item">Instalaciones.</li>
+        <li class="list-group-item">Actividades.</li>
+        <li class="list-group-item">Personal.</li>
+      </ul>
+      <img src="{% static 'home/images/checklist.webp' %}" class="img-fluid" alt="...">
+      
+      <ul class="list-group2">
+        <li class="list-group-item list-group-item-warning">¿Que Beneficios tienen los Hogares Geriatricos para el Adulto Mayor?</li>
+        <li class="list-group-item">Atencion Medica Especializada.</li>
+        <li class="list-group-item">Asistencia con la Actividades Diarias.</li>
+        <li class="list-group-item">Socializacion y compañerismo.</li>
+        <li class="list-group-item">Actividades Recreativas y Terapeuticas.</li>
+        <li class="list-group-item">Alimentacion y Nutricion Equilibrada.</li>
+        <li class="list-group-item">Seguridad y proteccion.</li>
+        <li class="list-group-item">Alivio para los Cuidadores Familiares.</li>
+        <li class="list-group-item">Mejor Calidad de vida.</li>
+      </ul>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <a href="https://wa.me/573227478740" 
+   class="whatsapp-float" 
+   target="_blank" 
+   title="Contáctanos por WhatsApp">
+   <i class="fab fa-whatsapp"></i>
+  </a>
+
+</body>
+<style>
+  .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      font-size: 28px;
+      text-align: center;
+      line-height: 60px;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease;
+  }
+  
+  .whatsapp-float:hover {
+      background-color: #1ebe5b;
+      text-decoration: none;
+  }
+  </style>  
+<footer style="top: 560%;  width:100%; position: absolute; background-color:  #b4b9c2 ; padding: 20px 0; text-align: center; font-family: Arial, sans-serif; font-size: 14px; color: #333;">
+  <div style="display: flex; justify-content: space-around; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
+      <div>
+          <h4 style="font-weight: bold; margin-bottom: 10px;">Contáctanos</h4>
+          <p style="margin: 5px 0;">Teléfono: +57 322 747 8750</p>
+          <p style="margin: 5px 0;">Correo: gvyamanecerdorado@outlook.com</p>
+      </div>
+      <div>
+          <h4 style="font-weight: bold; margin-bottom: 10px;">Redes Sociales</h4>
+          <a href="#" style="text-decoration: none; color: #007bff; margin: 5px 0; display: block;">Instagram</a>
+          <a href="#" style="text-decoration: none; color: #007bff; margin: 5px 0; display: block;">Facebook</a>
+      </div>
+      <div>
+          <h4 style="font-weight: bold; margin-bottom: 10px;">Horario de Atención</h4>
+          <p style="margin: 5px 0;">Lunes a Viernes: 8:00 AM - 8:00 PM</p>
+          <p style="margin: 5px 0;">Sábado y Domingo: 8:00 AM - 5:00 PM</p>
+      </div>
+      <div>
+          <h4 style="font-weight: bold; margin-bottom: 10px;">Compañía</h4>
+          <a href="#" style="text-decoration: none; color: #007bff; margin: 5px 0; display: block;">Nosotros</a>
+          <a href="#" style="text-decoration: none; color: #007bff; margin: 5px 0; display: block;">Vincúlate a Nosotros</a>
+          <a href="#" style="text-decoration: none; color: #007bff; margin: 5px 0; display: block;">Blog</a>
+          <a href="#" style="text-decoration: none; color: #007bff; margin: 5px 0; display: block;">Términos y Condiciones</a>
+      </div>
+  </div>
+</footer>
+
+</html>
