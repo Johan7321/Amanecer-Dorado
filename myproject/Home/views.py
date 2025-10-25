@@ -1,46 +1,50 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from django.utils.text import slugify
+from accounts.models import Organization
 
-# Create your views here.
-from django.http import HttpResponse
+# -------------------------------
+# REGISTRO (SIGNUP)
+# -------------------------------
+def signup(request):
+    """
+    Permite a un usuario crear una nueva cuenta y su propia organización (cliente SaaS).
+    """
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        org_name = request.POST.get('org_name')
+
+        if form.is_valid() and org_name:
+            user = form.save()
+            slug = slugify(org_name)
+            org = Organization.objects.create(name=org_name, slug=slug)
+
+            profile = user.profile
+            profile.organization = org
+            profile.is_owner = True
+            profile.save()
+
+            login(request, user)
+            return redirect('dashboard')
+    else:
+        form = UserCreationForm()
+
+    return render(request, 'accounts/signup.html', {'form': form})
+
+
+# -------------------------------
+# DASHBOARD (ÁREA PRIVADA)
+# -------------------------------
+@login_required
+def dashboard(request):
+    """
+    Vista principal del panel del usuario (dashboard).
+    Muestra información de la organización asociada.
+    """
+    org = getattr(request.user.profile, "organization", None)
+    return render(request, 'Home/dashboard.html', {'org': org})
 
 def index(request):
-    return HttpResponse("Bienvenido al manejo de geriatricos")
-
-
-def ejemplo(request):
-    return render(request, 'Home/Muro.html')
-
-def identity_view(request):
-    return render(request, 'Home/Identidad.html')
-
-def services_view(request):
-    return render(request, 'Home/servicios_generales.html')
-
-def otros_view(request):
-    return render(request, 'Home/Otroservicios.html')
-
-def Contacto_view(request):
-    return render(request, 'Home/Contacto.html')
-
-
-def Login_view(request):
-    return render(request, 'Home/Login.html')
-
-
-from django.shortcuts import render
-from django.http import JsonResponse
-import json
-
-def login_view(request):
-    if request.method == 'POST':
-        try:
-            data = json.loads(request.body)
-            usuario = data.get('usuario')
-            contrasena = data.get('contrasena')
-            print("Usuario:", usuario)
-            print("Contraseña:", contrasena)
-            return JsonResponse({'mensaje': f'Usuario recibido: {usuario}'})
-        except Exception as e:
-            return JsonResponse({'error': 'Datos inválidos', 'detalles': str(e)}, status=400)
-
-    return render(request, 'home/login.html')
+    return HttpResponse("Bienvenido al manejo de geriátricos")

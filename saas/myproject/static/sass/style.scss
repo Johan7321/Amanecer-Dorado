@@ -1,0 +1,64 @@
+// === VARIABLES ===
+$color-principal: #d62828;
+$color-secundario: #003049;
+$color-fondo: #f8f9fa;
+$padding-base: 1.5rem;
+$radius-base: 10px;
+
+// === ANIDACIÓN ===
+body {
+  background-color: $color-fondo;
+  font-family: 'Segoe UI', sans-serif;
+
+  header {
+    background-color: $color-principal;
+    color: white;
+    padding: $padding-base;
+
+    nav {
+      ul {
+        list-style: none;
+        li {
+          display: inline-block;
+          margin-right: 10px;
+
+          a {
+            text-decoration: none;
+            color: white;
+
+            &:hover {
+              color: yellow;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    background-color: $color-secundario;
+    color: white;
+    text-align: center;
+    padding: $padding-base;
+    border-radius: $radius-base;
+  }
+}
+
+// === INTERPOLACIÓN ===
+$estado: success;
+$color-estado: green;
+
+.alert-#{$estado} {
+  color: white;
+  background-color: $color-estado;
+  padding: $padding-base;
+}
+
+$tipo: error;
+$color-tipo: red;
+
+.alert-#{$tipo} {
+  color: white;
+  background-color: $color-tipo;
+  padding: $padding-base;
+}

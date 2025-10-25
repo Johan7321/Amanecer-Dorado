@@ -23,8 +23,9 @@ urlpatterns = [
     path('Identity/', views.identity_view, name='identity'),
     path('Services/', views.services_view, name='services'), 
     path('Otros/', views.otros_view, name='otros'), 
-    path('Contacto/', views.Contacto_view, name='Contacto'), 
-    path('Login/', views.Login_view, name='Login'), 
+    path('Contacto/', views.contacto_view, name='Contacto'), 
+    path('Login/', views.login_view, name='Login'), 
+    path('dashboard/', views.dashboard, name='dashboard'),
 ]
 
 
